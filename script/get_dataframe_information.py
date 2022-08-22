@@ -1,6 +1,11 @@
 import pandas as pd
 import numpy as np
 
+import sys, os
+
+sys.path.append(os.path.abspath(os.path.join("./script")))
+
+from get_missing_information import MissingInformation
 class DataFrameInformation:
     
     def __init__(self,data:pd.DataFrame):
@@ -15,13 +20,17 @@ class DataFrameInformation:
         
         return df_skewness
 
-#calculate skewness and missing value table
-def get_skewness_missing_count(df_skewness, mis_val_table_ren_columns):
-    df = pd.concat([df_skewness, mis_val_table_ren_columns], axis=1)
-    df['Dtype'] = df['Dtype'].fillna('float64')
-    df['% of Total Values'] = df['% of Total Values'].fillna(0.0)
-    df['Missing Values'] = df['Missing Values'].fillna(0)
-    df = df.sort_values(by='Missing Values', ascending=False)
-    return df
+    #calculate skewness and missing value table
+    def get_skewness_missing_count(self):
+        df_skewness = self.get_skewness()
+        minfo = MissingInformation(self.data)
+        
+        mis_val_table_ren_columns = minfo.missing_values_table()
+        df = pd.concat([df_skewness, mis_val_table_ren_columns], axis=1)
+        df['Dtype'] = df['Dtype'].fillna('float64')
+        df['% of Total Values'] = df['% of Total Values'].fillna(0.0)
+        df['Missing Values'] = df['Missing Values'].fillna(0)
+        df = df.sort_values(by='Missing Values', ascending=False)
+        return df
 
 
