@@ -23,4 +23,8 @@ class TestCleanData(unittest.TestCase):
     def setUp(self):
         self.dinfo = CleanData(test_data)
     
+
+if __name__ == "__main__":
+    unittest.main()
+    
     
