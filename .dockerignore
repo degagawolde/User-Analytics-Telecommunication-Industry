@@ -1,0 +1,7 @@
+tests/
+.github/
+.env/
+.ipynb_checkpoints/
+notebook/
+
+__pycache__/
