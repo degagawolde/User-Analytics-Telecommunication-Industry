@@ -22,10 +22,10 @@ class TestGetInformations(unittest.TestCase):
         self.dinfo = DataFrameInformation(test_data)
     
     def test_get_skewness(self):
-        self.assertEqual(self.dinfo.get_skewness().columns.tolist(), ['skewness'])
+        self.assertEqual(self.dinfo.get_skewness(test_data).columns.tolist(), ['skewness'])
 
     def test_get_skewness_missing_count(self):
-        self.assertEqual(self.dinfo.get_skewness_missing_count().columns.tolist(),
+        self.assertEqual(self.dinfo.get_skewness_missing_count(test_data).columns.tolist(),
                          ['skewness', 'Missing Values', '% of Total Values','Dtype'])
 if __name__ == "__main__":
     unittest.main() 

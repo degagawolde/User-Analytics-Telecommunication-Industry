@@ -5,15 +5,15 @@ class MissingInformation:
     def __init__(self,df:pd.DataFrame):
         self.df = df
         
-    def missing_values_table(self)->pd.DataFrame:
+    def missing_values_table(self,df:pd.DataFrame)->pd.DataFrame:
         # Total missing values
-        mis_val = self.df.isnull().sum()
+        mis_val = df.isnull().sum()
 
         # Percentage of missing values
-        mis_val_percent = 100 * self.df.isnull().sum() / len(self.df)
+        mis_val_percent = 100 * df.isnull().sum() / len(df)
 
         # dtype of missing values
-        mis_val_dtype = self.df.dtypes
+        mis_val_dtype = df.dtypes
 
         # Make a table with the results
         mis_val_table = pd.concat(
@@ -29,20 +29,20 @@ class MissingInformation:
             '% of Total Values', ascending=False).round(1)
 
         # Print some summary information
-        print("Your selected dataframe has " + str(self.df.shape[1]) + " columns.\n"
+        print("Your selected dataframe has " + str(df.shape[1]) + " columns.\n"
             "There are " + str(mis_val_table_ren_columns.shape[0]) +
             " columns that have missing values.")
 
         # Return the dataframe with missing information
         return mis_val_table_ren_columns
 
-    def percent_missing(self):
+    def percent_missing(self,df:pd.DataFrame):
 
         # Calculate total number of cells in dataframe
-        totalCells = np.product(self.df.shape)
+        totalCells = np.product(df.shape)
 
         # Count number of missing values per column
-        missingCount = self.df.isnull().sum()
+        missingCount = df.isnull().sum()
 
         # Calculate total number of missing values
         totalMissing = missingCount.sum()
