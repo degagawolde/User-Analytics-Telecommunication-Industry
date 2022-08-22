@@ -10,7 +10,7 @@ class MissingInformation:
         mis_val = self.df.isnull().sum()
 
         # Percentage of missing values
-        mis_val_percent = 100 * self.df.isnull().sum() / len(df)
+        mis_val_percent = 100 * self.df.isnull().sum() / len(self.df)
 
         # dtype of missing values
         mis_val_dtype = self.df.dtypes
