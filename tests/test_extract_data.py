@@ -8,7 +8,6 @@ import sys, os
 sys.path.append(os.path.abspath(os.path.join("./script")))
 
 from get_dataframe_information import  DataFrameInformation
-from get_missing_information import MissingInformation
 
 logging.basicConfig(filename='../logfile.log', filemode='a',
                     encoding='utf-8', level=logging.DEBUG)
