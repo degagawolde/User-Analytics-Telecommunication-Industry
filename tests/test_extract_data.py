@@ -5,7 +5,7 @@ import logging
 
 import sys, os
 
-sys.path.append(os.path.abspath(os.path.join("../script")))
+sys.path.append(os.path.abspath(os.path.join("./script")))
 
 from get_dataframe_information import  DataFrameInformation
 
