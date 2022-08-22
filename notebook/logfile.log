@@ -4335,3 +4335,19 @@ DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/System/Library/F
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/System/Library/Fonts/Apple Braille.ttf', name='Apple Braille', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/System/Library/Fonts/SFNS.ttf', name='System Font', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
 DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
