@@ -8252,3 +8252,12 @@ DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
 DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
 DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
 DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x160c3a500>
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.axes._base:top of Axes not in the figure, so title not moved
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16497b880>
