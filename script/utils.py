@@ -77,3 +77,13 @@ def convert_bytes_to_megabytes(df, bytes_data):
     df[bytes_data] = df[bytes_data] / megabyte
 
     return df[bytes_data]
+
+
+def fix_missing_ffill(df, col):
+    df[col] = df[col].fillna(method='ffill')
+    return df[col]
+
+
+def fix_missing_bfill(df, col):
+    df[col] = df[col].fillna(method='bfill')
+    return df[col]
