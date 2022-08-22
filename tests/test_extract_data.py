@@ -13,7 +13,7 @@ logging.basicConfig(filename='../logfile.log', filemode='a',
                     encoding='utf-8', level=logging.DEBUG)
 
 # try:
-test_data = pd.read_excel('../data/Week1_challenge_data_source.xlsx')
+test_data = pd.read_csv('./data/Week1_challenge_data_source.csv')
 # except BaseException:
     # logging.warning('file not found or wrong file format')
 
