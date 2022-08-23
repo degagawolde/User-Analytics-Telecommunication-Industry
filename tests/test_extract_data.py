@@ -20,7 +20,7 @@ except BaseException:
 class TestGetInformations(unittest.TestCase):
     def setUp(self):
         self.dinfo = DataFrameInformation(test_data)
-    
+     
     def test_get_skewness(self):
         self.assertEqual(self.dinfo.get_skewness(test_data).columns.tolist(), ['skewness'])
 
@@ -28,4 +28,4 @@ class TestGetInformations(unittest.TestCase):
         self.assertEqual(self.dinfo.get_skewness_missing_count(test_data).columns.tolist(),
                          ['skewness', 'Missing Values', '% of Total Values','Dtype'])
 if __name__ == "__main__":
-    unittest.main() 
+    unittest.main()

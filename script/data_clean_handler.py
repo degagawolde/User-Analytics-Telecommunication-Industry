@@ -17,14 +17,14 @@ class CleanData:
     def convert_bytes_to_megabytes(self, df:pd.DataFrame, bytes_data):
 
         megabyte = 1*10e+5
-        df[bytes_data] = df[bytes_data] / megabyte
-
-        return df[bytes_data]
+        for col in bytes_data:
+            df[col] = df[col] / megabyte
+        return df
 
     def fix_missing_ffill(self, df: pd.DataFrame,col):
         df[col] = df[col].fillna(method='ffill')
         return df[col]
-
+  
     def fix_missing_bfill(self, df: pd.DataFrame, col):
         df[col] = df[col].fillna(method='bfill')
         return df[col]
