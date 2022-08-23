@@ -43,6 +43,6 @@ jobs:
       #     docker_compose: 'docker-compose.yml' # required
           # repo_token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Clean up
-        run: rm data/*.xlsx
+      # - name: Clean up
+      #   run: rm data/*.xlsx
         
