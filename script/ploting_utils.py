@@ -6,13 +6,20 @@ class PlotingUtils:
     def __init__(self,df:pd.DataFrame):
         self.df = df
 
+    def plot_many_hist(self,df: pd.DataFrame, columns, color):
+        for i, col in enumerate(columns):
+            sns.displot(data=df, x=col, color=color,
+                        kde=True, height=7, aspect=2)
+            # plt.hist(df[col])
+            plt.title(col)
+            plt.show()
+
     def plot_hist(self,df: pd.DataFrame, column: str, color: str) -> None:
         # plt.figure(figsize=(15, 10))
         # fig, ax = plt.subplots(1, figsize=(12, 7))
         sns.displot(data=df, x=column, color=color, kde=True, height=7, aspect=2)
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
-
 
     def plot_count(self,df: pd.DataFrame, column: str) -> None:
         plt.figure(figsize=(12, 7))
@@ -29,7 +36,6 @@ class PlotingUtils:
         plt.xlabel(xlabel, fontsize=16)
         plt.ylabel(ylabel, fontsize=16)
         plt.show()
-
 
     def plot_heatmap(self,df: pd.DataFrame, title: str, cbar=False) -> None:
         plt.figure(figsize=(12, 7))
