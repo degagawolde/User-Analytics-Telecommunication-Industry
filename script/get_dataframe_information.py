@@ -1,6 +1,8 @@
+import logging
 import pandas as pd
 import numpy as np
 
+import logging
 import sys, os
 
 sys.path.append(os.path.abspath(os.path.join("./script")))
@@ -10,6 +12,8 @@ class DataFrameInformation:
     
     def __init__(self,data:pd.DataFrame):
         self.data = data
+        logging.basicConfig(filename='../logfile.log', filemode='a',
+                            encoding='utf-8', level=logging.DEBUG)
         
     #calculate the skewness of the dataframe first
     def get_skewness(self,data:pd.DataFrame):
