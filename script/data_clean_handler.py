@@ -19,12 +19,12 @@ class CleanData:
     def format_float(self,value):
         return f'{value:,.2f}'
 
-    def convert_bytes_to_megabytes(self, df:pd.DataFrame, bytes_data):
+    def convert_bytes_to_megabytes(self, df:pd.DataFrame, columns):
 
         megabyte = 1*10e+5
-        for col in bytes_data:
+        for col in columns:
             df[col] = df[col] / megabyte
-        return df
+        return df 
 
     def fix_missing_ffill(self, df: pd.DataFrame,col):
         df[col] = df[col].fillna(method='ffill')
