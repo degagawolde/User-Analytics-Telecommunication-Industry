@@ -75,7 +75,7 @@ ax[2].tick_params(axis='x', labelrotation=90)
 plt.subplots_adjust(left=0.2, right=0.99,
                     bottom=0.2, top=0.6,
 ```
-![](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top3handsetpertop3manufacturer.png)
+![top 5 handset per top 3 manufacturer](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top5hansetpermanufacture.png)
 
 # User Engagement Analysis
 # Experience Analytics
