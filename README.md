@@ -38,6 +38,39 @@ df_from_excell = pd.read_excel('../data/Week1_challenge_data_source.xlsx')
 # User Overview Analysis
 XDR collects and correlates data across email, endpoints, servers, cloud workloads, and networks, enabling visibility and context into advanced threats [here](https://www.cisco.com/c/en/us/products/security/what-is-xdr.html). User behaviour can be tracked through the social media, google, email, youtube, netflix, gaming, other using the XDR session.
 
+```
+handset_count = df['Handset Type'].value_counts()
+handset_count[:10].plot(kind='bar', color=['teal', 'green', 'blue','purple','pink'])
+
+```
+![top10handset]()
+```
+handset_manufacturer = clean_data['Handset Manufacturer'].value_counts()
+handset_manufacturer[:3].plot(
+    kind='bar', color=['teal', 'green', 'blue'])
+```
+![top3manufacturer]()
+```
+fig, ax = plt.subplots(1, 3)
+
+ax[0].bar(apple.keys(), apple.values, tick_label=apple.keys(),
+          width=.5, color=['blue', 'green', 'orange'])
+ax[0].set_title('Apple')
+ax[0].tick_params(axis='x', labelrotation=90)
+
+ax[1].bar(sumsung.keys(), sumsung.values, tick_label=sumsung.keys(),
+          width=0.8, color=['blue', 'green', 'orange'])
+ax[1].set_title('Sumsung')
+ax[1].tick_params(axis='x', labelrotation=90)
+
+ax[2].bar(huawei.keys(), huawei.values, tick_label=huawei.keys(),
+          width=0.8, color=['blue', 'green', 'orange'])
+ax[2].set_title('Huawei')
+ax[2].tick_params(axis='x', labelrotation=90)
+plt.subplots_adjust(left=0.2, right=0.99,
+                    bottom=0.2, top=0.6,
+```
+
 
 # User Engagement Analysis
 # Experience Analytics
