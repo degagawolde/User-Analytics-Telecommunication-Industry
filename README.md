@@ -36,7 +36,9 @@ df_from_excell = pd.read_excel('../data/Week1_challenge_data_source.xlsx')
         return df
 ```
 # User Overview Analysis
-XDR collects and correlates data across email, endpoints, servers, cloud workloads, and networks, enabling visibility and context into advanced threats [here](https://www.cisco.com/c/en/us/products/security/what-is-xdr.html). User behaviour can be tracked through the social media, google, email, youtube, netflix, gaming, other. 
+XDR collects and correlates data across email, endpoints, servers, cloud workloads, and networks, enabling visibility and context into advanced threats [here](https://www.cisco.com/c/en/us/products/security/what-is-xdr.html). User behaviour can be tracked through the social media, google, email, youtube, netflix, gaming, other using the XDR session.
+
+
 # User Engagement Analysis
 # Experience Analytics
 # Satisfaction Analysis
