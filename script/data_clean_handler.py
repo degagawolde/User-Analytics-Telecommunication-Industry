@@ -46,3 +46,10 @@ class CleanData:
         for col in columns:
             df[col] = df[col].fillna(df[col].mode()[0])
         return df
+
+    def fix_outlier(self,df:pd.DataFrame, columns):
+        for column in columns:
+            df[column] = np.where(df[column] > df[column].quantile(
+                0.95), df[column].median(), df[column])
+            
+        return df
