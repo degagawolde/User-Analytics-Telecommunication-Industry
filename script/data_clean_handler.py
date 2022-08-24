@@ -3,13 +3,18 @@ import pandas as pd
 
 import sys, os
 
+import logging
+
 sys.path.append(os.path.abspath(os.path.join("./script")))
+
 
 from get_dataframe_information import DataFrameInformation
 
 class CleanData:
     def __init__(self,df:pd.DataFrame):
         self.df = df
+        logging.basicConfig(filename='../logfile.log', filemode='a',
+                            encoding='utf-8', level=logging.DEBUG)
         
     def format_float(self,value):
         return f'{value:,.2f}'
@@ -39,7 +44,7 @@ class CleanData:
         df = data_info.get_skewness_missing_count(data)
         not_fill = df[(df['% of Total Values'] >= 20.0)].index.tolist()
         df_clean = self.drop_column(data, not_fill)
-        
+         
         return df_clean
     
     def fill_mode(self, df: pd.DataFrame, columns) -> pd.DataFrame:

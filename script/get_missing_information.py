@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
+import logging
 
 class MissingInformation:
     def __init__(self,df:pd.DataFrame):
         self.df = df
+        logging.basicConfig(filename='../logfile.log', filemode='a',
+                            encoding='utf-8', level=logging.DEBUG)
         
     def missing_values_table(self,df:pd.DataFrame)->pd.DataFrame:
         # Total missing values
@@ -29,9 +32,10 @@ class MissingInformation:
             '% of Total Values', ascending=False).round(1)
 
         # Print some summary information
-        print("Your selected dataframe has " + str(df.shape[1]) + " columns.\n"
-            "There are " + str(mis_val_table_ren_columns.shape[0]) +
-            " columns that have missing values.")
+     
+        logging.info("Your selected dataframe has " + str(df.shape[1]) + " columns.\n"
+                         "There are " + str(mis_val_table_ren_columns.shape[0]) +
+                         " columns that have missing values.")
 
         # Return the dataframe with missing information
         return mis_val_table_ren_columns
