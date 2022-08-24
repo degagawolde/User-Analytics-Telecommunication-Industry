@@ -20,7 +20,6 @@ class PlotingUtils:
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
 
-
     def plot_bar(self,df: pd.DataFrame, x_col: str, y_col: str, title: str, xlabel: str, ylabel: str) -> None:
         plt.figure(figsize=(12, 7))
         sns.barplot(data=df, x=x_col, y=y_col)
