@@ -48,13 +48,20 @@ handset_count[:10].plot(kind='bar', color=['teal', 'green', 'blue','purple','pin
 
 ***Top 3 Handset Manufacturer***
 ```
-handset_manufacturer = clean_data['Handset Manufacturer'].value_counts()
+handset_manufacturer = df['Handset Manufacturer'].value_counts()
 handset_manufacturer[:3].plot(
     kind='bar', color=['teal', 'green', 'blue'])
 ```
 ![top3manufacturer](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top3manufacturer.png)
 
 ***Top 5 handset type per top 3 manufacturer***
+```
+handset_man= df[df['Handset Manufacturer'].isin(['Apple','Samsung','Huawei'])]
+handset = handset_man.groupby('Handset Manufacturer')['Handset Type'].value_counts()
+apple = handset.Apple[:5]
+sumsung = handset.Samsung[:5]
+huawei = handset.Huawei[:5]
+```
 ```
 fig, ax = plt.subplots(1, 3)
 
