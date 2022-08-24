@@ -49,7 +49,7 @@ handset_manufacturer = clean_data['Handset Manufacturer'].value_counts()
 handset_manufacturer[:3].plot(
     kind='bar', color=['teal', 'green', 'blue'])
 ```
-![top3manufacturer]()
+![top3manufacturer](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top3manufacturer.png)
 ```
 fig, ax = plt.subplots(1, 3)
 
