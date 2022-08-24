@@ -21,6 +21,12 @@ class PlotingUtils:
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
 
+    def plot_many_count_plot(self, df: pd.DataFrame, columns, amount):
+        for col in columns:
+            df[col].value_counts()[:amount].plot(
+                kind='bar', color=['teal', 'green', 'blue'], title=col)
+            plt.show()
+
     def plot_count(self,df: pd.DataFrame, column: str) -> None:
         plt.figure(figsize=(12, 7))
         sns.countplot(data=df, x=column)
