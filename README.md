@@ -38,18 +38,23 @@ df_from_excell = pd.read_excel('../data/Week1_challenge_data_source.xlsx')
 # User Overview Analysis
 XDR collects and correlates data across email, endpoints, servers, cloud workloads, and networks, enabling visibility and context into advanced threats [here](https://www.cisco.com/c/en/us/products/security/what-is-xdr.html). User behaviour can be tracked through the social media, google, email, youtube, netflix, gaming, other using the XDR session.
 
+***Top 10 Handset Type***
 ```
 handset_count = df['Handset Type'].value_counts()
 handset_count[:10].plot(kind='bar', color=['teal', 'green', 'blue','purple','pink'])
 
 ```
-![top10handset]()
+![top10handset](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10handset.png)
+
+***Top 3 Handset Manufacturer***
 ```
 handset_manufacturer = clean_data['Handset Manufacturer'].value_counts()
 handset_manufacturer[:3].plot(
     kind='bar', color=['teal', 'green', 'blue'])
 ```
 ![top3manufacturer](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top3manufacturer.png)
+
+***Top 5 handset type per top 3 manufacturer***
 ```
 fig, ax = plt.subplots(1, 3)
 
@@ -70,7 +75,7 @@ ax[2].tick_params(axis='x', labelrotation=90)
 plt.subplots_adjust(left=0.2, right=0.99,
                     bottom=0.2, top=0.6,
 ```
-
+![](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top3handsetpertop3manufacturer.png)
 
 # User Engagement Analysis
 # Experience Analytics
