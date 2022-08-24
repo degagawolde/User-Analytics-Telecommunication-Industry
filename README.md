@@ -17,12 +17,26 @@ df_from_excell = pd.read_excel('../data/Week1_challenge_data_source.xlsx')
 ***Handling Missing*** 
 
 - Drop column with missing value percentage > 30%
+```
+    def drop_column(self, df: pd.DataFrame, columns) -> pd.DataFrame:
+        for col in columns:
+            df = df.drop([col], axis=1)
+        return df
+```
 - Fill missing values with mean, median, mode, bfill, ffill, etc
 - Mean and median is for numeric column only.
- - Mean/Median/Mode Imputation for  less than 3% missing values. mode is good when the data distribution is skewed, and mean.media is good for data that are not skewed.
+- Mean/Median/Mode Imputation for  less than 3% missing values. mode is good when the data distribution is skewed, and mean.media is good for data that are not skewed.
 - For the columns {Start, Start ms,End ms,Dur. (ms).1, Dur. (ms),Avg Bearer TP DL (kbps),Avg Bearer TP UL (kbps), Total DL (Bytes), Avg Bearer TP DL (kbps), ),Total UL (Bytes), Activity Duration DL (ms),Activity Duration UL (ms), End } are related to time/duration and have 1 missing values. droping the row with the missing values will not be a problem
 - For the text column(Handset Manufacturer, Handset Type, and last location name) are not numeric, mode filling can be used and we can found their mode easily 
+
+```
+    def fill_mode(self, df: pd.DataFrame, columns) -> pd.DataFrame:
+        for col in columns:
+            df[col] = df[col].fillna(df[col].mode()[0])
+        return df
+```
 # User Overview Analysis
+
 # User Engagement Analysis
 # Experience Analytics
 # Satisfaction Analysis
