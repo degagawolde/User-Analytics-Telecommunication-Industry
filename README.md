@@ -20,8 +20,5 @@ df_from_excell = pd.read_excel('../data/Week1_challenge_data_source.xlsx')
 - Fill missing values with mean, median, mode, bfill, ffill, etc
 - Mean and median is for numeric column only.
  - Mean/Median/Mode Imputation for  less than 3% missing values. mode is good when the data distribution is skewed, and mean.media is good for data that are not skewed.
-1. For the Timestamp columns (start,end).) I will use ffill as they are skewed have more on 1 missing value. Since the duration is provided they may not be important for the objective.
-2. For the columns {Start, Start ms,End ms,Dur. (ms).1, Dur. (ms),Avg Bearer TP DL (kbps),Avg Bearer TP UL (kbps), Total DL (Bytes), Avg Bearer TP DL (kbps), ),Total UL (Bytes), Activity Duration DL (ms),Activity Duration UL (ms), End } are related to time/duration and have 1 missing values. droping the row with the missing values will not be a problem
-3. For the numeric column ... I will use mean as they are not skewed have more than 15% but less than 30% missing values 
-4. For the numeric column ... I will use mean as they are not skewed have more than 15% but less than 30% missing values
-5. For the text column(Handset Manufacturer, Handset Type, and last location name, ) I will use mode are not numeric and we can found their mode easily, the % of missing value is more than 15% but less than 30% missing values  
+- For the columns {Start, Start ms,End ms,Dur. (ms).1, Dur. (ms),Avg Bearer TP DL (kbps),Avg Bearer TP UL (kbps), Total DL (Bytes), Avg Bearer TP DL (kbps), ),Total UL (Bytes), Activity Duration DL (ms),Activity Duration UL (ms), End } are related to time/duration and have 1 missing values. droping the row with the missing values will not be a problem
+- For the text column(Handset Manufacturer, Handset Type, and last location name) are not numeric, mode filling can be used and we can found their mode easily 
