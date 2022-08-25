@@ -144,7 +144,13 @@ After generateing the total_data, total_diration, and total_freq using the aggre
 
 ![table](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/engagementtable.png)
 
-![cluster](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/3meancluster.png)
+```
+from sklearn.cluster import KMeans
+Kmean = KMeans(n_clusters=3)
+Kmean.fit(normalized_df)
+```
+
+![cluster](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/3cluster.png)
 
 # Experience Analytics
 # Satisfaction Analysis
