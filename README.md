@@ -96,5 +96,28 @@ sorted_df = total_duration.sort_values('total_duration',ascending=False)[:10]
 sorted_df.plot.bar()
 ```
 ![top 10 total duration](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10duration.png)
+
+2. Session total traffic
+```
+datainfo = DataFrameInformation(df)
+dl_columns = datainfo.get_column_with_string(df, 'DL \(Bytes\)')
+total_download = df.groupby(
+    'MSISDN/Number').agg({c: 'sum' for c in dl_columns}).sum(axis=1)
+total_download = pd.DataFrame(total_download).reset_index().rename(
+    columns={0: 'total_download'})
+sorted_df = total_download.sort_values('total_download', ascending=False)[:10]
+sorted_df.plot.bar()
+```
+![top 10 total download](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10download.png)
+
+```
+ul_columns = datainfo.get_column_with_string(df, 'UL \(Bytes\)')
+total_upload = df.groupby('MSISDN/Number').agg({c:'sum' for c in ul_columns}).sum(axis=1)
+total_upload = pd.DataFrame(total_upload).reset_index().rename(columns={0:'total_upload'})
+sorted_df = total_upload.sort_values('total_upload', ascending=False)[:10]
+sorted_df.plot.bar()
+```
+![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10upload.png)
+
 # Experience Analytics
 # Satisfaction Analysis
