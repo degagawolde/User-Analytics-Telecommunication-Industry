@@ -119,5 +119,16 @@ sorted_df.plot.bar()
 ```
 ![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10upload.png)
 
+```
+total_traffic = total_download.merge(total_upload, on='MSISDN/Number')
+total_data = pd.DataFrame(total_traffic['MSISDN/Number'])
+total_data['total_data'] = total_traffic['total_download'] + \
+    total_traffic['total_upload']
+
+sorted_df = total_data.sort_values('total_data', ascending=False)[:10]
+sorted_df.plot.bar()
+```
+![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10data.png)
+
 # Experience Analytics
 # Satisfaction Analysis
