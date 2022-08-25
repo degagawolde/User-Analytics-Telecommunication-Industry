@@ -85,5 +85,16 @@ plt.subplots_adjust(left=0.2, right=0.99,
 ![top 5 handset per top 3 manufacturer](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top5hansetpermanufacture.png)
 
 # User Engagement Analysis
+User engagement analysis is used to determine how a give user is engeged to a given application. There may be different metrics to determinge the egagement level. For example, total duration of session, total traffic of a session, and frequency of a session can determine user engagement for a telecom service provider. 
+1. Duration of a session
+```
+total_duration = df.groupby('MSISDN/Number').agg(
+    {'Dur. (ms)': 'sum'}).reset_index().rename(columns={'Dur. (ms)': 'total_duration'})
+```
+```
+sorted_df = total_duration.sort_values('total_duration',ascending=False)[:10]
+sorted_df.plot.bar()
+```
+![top 10 total duration](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10duration.png)
 # Experience Analytics
 # Satisfaction Analysis
