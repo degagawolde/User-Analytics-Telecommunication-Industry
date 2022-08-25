@@ -4,6 +4,8 @@ import numpy as np
 
 import logging
 import sys, os
+import re
+
 
 sys.path.append(os.path.abspath(os.path.join("./script")))
 
@@ -36,5 +38,9 @@ class DataFrameInformation:
         df['Missing Values'] = df['Missing Values'].fillna(0)
         df = df.sort_values(by='Missing Values', ascending=False)
         return df
+
+    def get_column_with_string(self,df: pd.DataFrame, text):
+        return [col for col in df.columns if re.findall(text, col) != []]
+
 
 
