@@ -129,7 +129,7 @@ sorted_df.plot.bar()
 ```
 ![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10data.png)
 
-3. Session Frequency
+***3. Session Frequency***
 ```
 total_freq = df.groupby('MSISDN/Number').agg(
     {'Bearer Id': 'count'}).reset_index().rename(columns={'Bearer Id': 'total_freq'})
@@ -139,6 +139,12 @@ sorted_df.plot.bar()
 ```
 ![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10fre.png)
 
+***User Clustering Based on Their Engagement***
+After generateing the total_data, total_diration, and total_freq using the aggregation functionality of the Pandas python library, we can use K-mean cluster to segment the user into k clusters.
+
+![table](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/engagementtable.png)
+
+![cluster](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/3meancluster.png)
 
 # Experience Analytics
 # Satisfaction Analysis
