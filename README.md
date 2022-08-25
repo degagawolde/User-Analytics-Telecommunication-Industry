@@ -122,13 +122,23 @@ sorted_df.plot.bar()
 ```
 total_traffic = total_download.merge(total_upload, on='MSISDN/Number')
 total_data = pd.DataFrame(total_traffic['MSISDN/Number'])
-total_data['total_data'] = total_traffic['total_download'] + \
-    total_traffic['total_upload']
+total_data['total_data'] = total_traffic['total_download'] + total_traffic['total_upload']
 
 sorted_df = total_data.sort_values('total_data', ascending=False)[:10]
 sorted_df.plot.bar()
 ```
 ![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10data.png)
+
+3. Session Frequency
+```
+total_freq = df.groupby('MSISDN/Number').agg(
+    {'Bearer Id': 'count'}).reset_index().rename(columns={'Bearer Id': 'total_freq'})
+
+sorted_df = total_freq.sort_values('total_freq', ascending=False)[:10]
+sorted_df.plot.bar()
+```
+![top 10 total upload](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/top10fre.png)
+
 
 # Experience Analytics
 # Satisfaction Analysis
