@@ -4,6 +4,8 @@ import pandas as pd
 import sys, os
 
 import logging
+from scipy.stats.mstats import winsorize
+
 
 sys.path.append(os.path.abspath(os.path.join("./script")))
 
@@ -15,7 +17,12 @@ class CleanData:
         self.df = df
         logging.basicConfig(filename='../logfile.log', filemode='a',
                             encoding='utf-8', level=logging.DEBUG)
-        
+    
+    def convert_dtype(self, df: pd.DataFrame, columns, dtype):
+        for col in columns:
+            df[col] = df[col].astype(dtype=dtype)
+        return df
+    
     def format_float(self,value):
         return f'{value:,.2f}'
 
@@ -60,7 +67,13 @@ class CleanData:
 
     def fix_outlier(self,df:pd.DataFrame, columns):
         for column in columns:
-            df[column] = np.where(df[column] > df[column].quantile(
-                0.95), df[column].median(), df[column])
+            df[column] = np.where(df[column] > df[column].quantile(0.95), df[column].median(), df[column])
             
+        return df
+
+    def handle_outliers(self, df: pd.DataFrame,lower,upper):
+       
+        selected_columns = df.select_dtypes(include='float64').columns
+        for col in selected_columns:
+            df[col] = winsorize(df[col], (lower, upper))
         return df
