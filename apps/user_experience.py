@@ -46,7 +46,7 @@ def user_experience(df: pd.DataFrame):
 
     dinfo = DataFrameInformation(selected_df)
     missing_df = dinfo.get_skewness_missing_count(selected_df)
-    st.dataframe(missing_df)
+    st.dataframe(missing_df.astype(str))
 
 
     cleaner = CleanData(selected_df)
