@@ -42,5 +42,18 @@ class DataFrameInformation:
     def get_column_with_string(self,df: pd.DataFrame, text):
         return [col for col in df.columns if re.findall(text, col) != []]
 
+    def get_dataframe_information(self,df: pd.DataFrame):
+        columns = []
+        counts = []
+        i = 0
+
+        for key, item in df.isnull().sum().items():
+            if item != 0:
+                columns.append(key)
+                counts.append(item)
+                i += 1
+        logging.info(
+            'the dataset contain {} columns with missing values'.format(i))
+        return pd.DataFrame({'column name': columns, 'counts': counts})
 
 
