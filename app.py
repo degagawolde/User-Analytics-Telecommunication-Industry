@@ -1,10 +1,11 @@
+from apps.user_experience import user_experience
 import streamlit as st
 import logging
 import io
 import os
 import pandas as pd
 from multipleapp import MultipleApp
-from apps import data_information, user_overview, user_engagement # import your app modules here
+from apps import data_information, user_overview, user_engagement,user_experience # import your app modules here
 
 
 #logging configuration
@@ -33,7 +34,7 @@ app = MultipleApp()
 app.add_app("Dataset Information", data_information.data_info, original_df)
 app.add_app('User Overview Analysis', user_overview.user_overview, clean_data)
 app.add_app('User Engegement Analysis', user_engagement.user_engagement, clean_data)
-app.add_app('User Experience Analysis', user_overview.user_overview, clean_data)
+app.add_app('User Experience Analysis', user_experience.user_experience, clean_data)
 app.add_app('User Satisfaction Analysis', user_overview.user_overview, clean_data)
 # The main app
 app.run()
