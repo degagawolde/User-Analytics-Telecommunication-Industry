@@ -34,7 +34,7 @@ app = MultipleApp()
 app.add_app("Dataset Information", data_information.data_info, original_df)
 app.add_app('User Overview Analysis', user_overview.user_overview, clean_data)
 app.add_app('User Engegement Analysis', user_engagement.user_engagement, clean_data)
-app.add_app('User Experience Analysis', user_experience.user_experience, clean_data)
+app.add_app('User Experience Analysis', user_experience.user_experience, original_df)
 app.add_app('User Satisfaction Analysis', user_overview.user_overview, clean_data)
 # The main app
 app.run()
