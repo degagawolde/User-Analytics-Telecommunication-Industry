@@ -23,7 +23,6 @@ def data_info(original_df:pd.DataFrame):
     
     data_info = DataFrameInformation(original_df)
     
-
     #get those who has missing values
     dataframe_info = data_info.get_skewness_missing_count(
         original_df).astype(str)
@@ -35,7 +34,7 @@ def data_info(original_df:pd.DataFrame):
     fig = plt.figure(figsize=(8,6))
     ax1 = fig.add_subplot(1,1,1)
     ax1.set_title('Shows missing data count')
-    msno.bar(original_df, fontsize=12, ax=ax1);
+    msno.bar(original_df, fontsize=12, ax=ax1)
     
     st.plotly_chart(fig, width=100)
 

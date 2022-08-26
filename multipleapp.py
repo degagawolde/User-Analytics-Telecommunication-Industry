@@ -3,22 +3,23 @@
 import streamlit as st
 
 
-class MultiApp:
+class MultipleApp:
 
     def __init__(self):
         self.apps = []
 
-    def add_app(self, title, func):
+    def add_app(self, title, func,data):
 
         self.apps.append({
             "title": title,
-            "function": func
+            "function": func,
+            'data':data
         })
 
     def run(self):
         app = st.sidebar.radio(
-            'Go To',
+            'Actions',
             self.apps,
             format_func=lambda app: app['title'])
-
-        # app['function']()
+        
+        app['function'](app['data'])
