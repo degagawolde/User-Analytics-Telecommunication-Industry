@@ -162,3 +162,14 @@ total_df.to_csv('../data/user_experience_score.csv',index=True)
 
 # Satisfaction Analysis
 First by creating user experience and engagement score, we can then average both and calculate user satisfaction. 
+
+***Save Scores and user Id to mysql database***
+```
+from sqlalchemy import create_engine
+connections_path = "mysql+pymysql://root:<password>@localhost/<database>"
+engine = create_engine(connections_path)
+# conn = engine.connect()
+data = df[['MSISDN/Number', 'engagement_score',
+           'experience_score', 'satisfaction_score']]
+data.to_sql('eng_exp_sat',engine.connect(),if_exists='append')
+```
