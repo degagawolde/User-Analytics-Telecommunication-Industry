@@ -1,0 +1,33 @@
+version: "3.7"
+
+services: 
+    streamlit-dashboard:
+      build: .
+      command: sh -c "sleep 10s;python ./mysql_manager.py;streamlit run ./app.py"
+      depends_on:
+        - mysql
+      networks:
+        - app_network
+      ports:
+        - '8501:8501'
+    mysql:
+      platform: linux/x86_64
+      image: mysql:5.7
+      restart: always
+      networks:
+        - app_network
+      ports:
+        - '3306:3306'
+      volumes:
+        - mysql-data:/var/lib/mysql
+      environment:
+        MYSQL_USER: root
+        MYSQL_ROOT_PASSWORD: root#123
+        MYSQL_DATABASE: telecom_data
+        protocol: tcp
+
+networks:
+  app_network:
+    driver: bridge
+volumes:
+  mysql-data:
