@@ -153,6 +153,12 @@ Kmean.fit(normalized_df)
 ![cluster](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/3cluster.png)
 
 # Experience Analytics
-User experience can be measured based on the metrics like: average throughput, average tcp retransmission, and average round trip.
+User experience can be measured based on the metrics like: average throughput, average tcp retransmission, and average round trip. 
+first we cluster the data into 3. we can then calculate the expereince score by finding the eculeadian distance between each data point and the centroid representing the worst experience.
+```
+total_df['experience_score'] = normalized_df.apply(lambda x: np.sqrt(np.sum(np.power(x-centroids[:, 0], 2))), axis=1)
+total_df.to_csv('../data/user_experience_score.csv',index=True)
+```
+
 # Satisfaction Analysis
 First by creating user experience and engagement score, we can then average both and calculate user satisfaction. 
