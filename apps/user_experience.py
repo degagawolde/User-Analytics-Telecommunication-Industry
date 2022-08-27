@@ -1,7 +1,4 @@
 
-# import packages
-from asyncore import write
-from turtle import width
 from script.data_clean_handler import CleanData
 from script.get_dataframe_information import DataFrameInformation
 from script.ploting_utils import PlotingUtils
@@ -16,8 +13,6 @@ import numpy as np
 import logging
 import sys
 import os
-import re
-import io
 
 # import custom packages
 sys.path.append(os.path.abspath(os.path.join("../script")))
