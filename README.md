@@ -153,4 +153,6 @@ Kmean.fit(normalized_df)
 ![cluster](https://github.com/degagawolde/User-Analytics-Telecommunication-Industry/blob/main/images/3cluster.png)
 
 # Experience Analytics
+User experience can be measured based on the metrics like: average throughput, average tcp retransmission, and average round trip.
 # Satisfaction Analysis
+First by creating user experience and engagement score, we can then average both and calculate user satisfaction. 
