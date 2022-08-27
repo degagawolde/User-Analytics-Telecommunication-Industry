@@ -1,7 +1,3 @@
-
-from script.data_clean_handler import CleanData
-from script.get_dataframe_information import DataFrameInformation
-from script.ploting_utils import PlotingUtils
 import streamlit as st
 from sklearn.cluster import KMeans
 from scipy.stats.mstats import winsorize
@@ -16,6 +12,9 @@ import os
 
 # import custom packages
 sys.path.append(os.path.abspath(os.path.join("../script")))
+from script.data_clean_handler import CleanData
+from script.get_dataframe_information import DataFrameInformation
+
 
 #logging configuration
 logging.basicConfig(filename='../logfile.log', filemode='a',
