@@ -40,9 +40,5 @@ jobs:
       # - name: publish
       #   uses: pennsignals/publish_docker-compose@v0.1.0
       #   with:
-      #     docker_compose: 'docker-compose.yml' # required
-          # repo_token: "${{ secrets.GITHUB_TOKEN }}"
-
-      # - name: Clean up
-      #   run: rm data/*.xlsx
-        
+      #     docker_compose: 'docker-compose.yml' 
+      #     repo_token: "${{ secrets.GITHUB_TOKEN }}"
