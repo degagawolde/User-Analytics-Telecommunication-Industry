@@ -3,7 +3,7 @@ version: "3.7"
 services: 
     streamlit-dashboard:
       build: .
-      command: sh -c "sleep 10s;python ./mysql_manager.py;streamlit run ./app.py"
+      command: sh -c "sleep 10s;python ./mysql_handler.py;streamlit run ./app.py"
       depends_on:
         - mysql
       networks:
