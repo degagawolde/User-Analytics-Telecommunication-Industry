@@ -37,8 +37,8 @@ jobs:
         with: 
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: publish
-        uses: pennsignals/publish_docker-compose@v0.1.0
-        with:
-          docker_compose: 'docker-compose.yml' 
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+      # - name: publish
+      #   uses: pennsignals/publish_docker-compose@v0.1.0
+      #   with:
+      #     docker_compose: 'docker-compose.yml' 
+      #     repo_token: "${{ secrets.GITHUB_TOKEN }}"

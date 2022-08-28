@@ -8,8 +8,8 @@ ADD . /app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-ARG DEBIAN_FRONTEND=noninteractive
-ARG DEBCONF_NOWARNINGS="yes"
+# ARG DEBIAN_FRONTEND=noninteractive
+# ARG DEBCONF_NOWARNINGS="yes"
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc
