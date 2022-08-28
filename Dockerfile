@@ -5,5 +5,6 @@ EXPOSE 8501
 WORKDIR /app
 ADD . /app
 
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
+RUN python3 -m venv docker-env
+RUN source docker-env/bin/activate
+RUN python3 -m pip install -r requirements.txt
