@@ -1,5 +1,5 @@
 # User-Analytics-Telecommunication-Industry
-
+Used data analysis and clustering to identify consumer experience, engagement, and satisfaction and found that 71% of the customers were satisfied with the service.
 # Objective
 - To analysis a telecommunication dataset to identfy wether buying TellCo mobile service provider is profitable or not
 # Data Preparation
